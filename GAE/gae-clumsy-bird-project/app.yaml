@@ -1,0 +1,16 @@
+## required for the env that is used by app ##
+runtime : nodejs10
+  
+## list of url patterns and how it should be handled ##
+handlers:
+- url: /favicon\.ico
+  static_files: data/img/favicon.ico
+  upload: favicon.ico
+
+## HTTP response code returned when performing a redirect required ##
+- url: /.*
+  secure: always
+## automatically redirect to https by using above line ##
+  redirect_http_response_code: 301
+  script: auto
+## script element is auto because all traffic is served using the entrypoint command ##
