@@ -12,6 +12,7 @@ COPY . /app
 # Create and change to the app directory.
 WORKDIR /app
 
+## disable cache and install required modules ##
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN chmod 444 app.py
